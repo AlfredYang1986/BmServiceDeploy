@@ -158,7 +158,7 @@ resources:
   storages:
   - BmClassStorage
   - BmSessioninfoStorage
-  - BmBindReservableClassStorage
+  - BmReservableitemStorage
   - BmYardStorage
   - BmStudentStorage
   - BmDutyStorage
