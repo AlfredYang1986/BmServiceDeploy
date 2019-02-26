@@ -327,6 +327,10 @@ middlewares:
   args:
   - name
 
+panic:
+  name: BmCommonPanicHandle
+  create: NewCommonPanicHandle
+
 daemons:
 - name: BmMongodbDaemon
   method: NewMongoDBDaemon
