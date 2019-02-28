@@ -2,3 +2,4 @@
 .idea
 .vscode
 deploy-config/tmp/*
+local-config/tmp/*

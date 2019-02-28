@@ -335,15 +335,13 @@ daemons:
 - name: BmMongodbDaemon
   method: NewMongoDBDaemon
   args:
-    # host: primary
-    host: altlys.com
-    port: 5555
+    host: 192.168.100.174
+    port: 27017
     database: ddsaas-demo
 - name: BmRedisDaemon
   method: NewRedisDBDaemon
   args:
-    # host: redis
-    host: altlys.com
-    port: 6380
+    host: 192.168.100.174
+    port: 6379
     password:
     database: 0
