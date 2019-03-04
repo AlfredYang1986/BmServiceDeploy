@@ -318,14 +318,6 @@ functions:
   http: POST
   args:
   - name
-- name: BmSmsHandler
-  create: NewSmsHandler
-  daemons:
-  - BmSmsDaemon
-  method: VerifiedSmsCode
-  http: POST
-  args:
-  - name
 
 middlewares:
 - name: BmCheckTokenMiddleware
@@ -345,7 +337,7 @@ daemons:
   args:
     host: 192.168.100.174
     port: 27017
-    database: ddsaas-demo
+    database: ddsaas-tmp
 - name: BmRedisDaemon
   method: NewRedisDBDaemon
   args:
@@ -353,13 +345,3 @@ daemons:
     port: 6379
     password:
     database: 0
-- name: BmSmsDaemon
-  method: NewSmsDaemon
-  args:
-    regionId: 0000
-    accessKeyId: 0000
-    accessSecret: 0000
-    domain: dysmsapi.aliyun.com
-    version: 2019-03-04
-    apiName: BlackMirror-SMS
-    signName: 黑镜子科技儿童教育服务

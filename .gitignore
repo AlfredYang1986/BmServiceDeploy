@@ -3,3 +3,4 @@
 .vscode
 deploy-config/tmp/*
 local-config/tmp/*
+test-config/tmp/*

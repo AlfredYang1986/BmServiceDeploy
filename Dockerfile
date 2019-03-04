@@ -8,7 +8,7 @@ RUN cd /go/src/gopkg.in/yaml.v2 && git checkout tags/v2.2.2
 RUN git clone https://github.com/go-mgo/mgo /go/src/gopkg.in/mgo.v2
 RUN cd /go/src/gopkg.in/mgo.v2 && git checkout -b v2
 
-LABEL BmPods.version="2.0.7" maintainer="Jeorch"
+LABEL BmPods.version="2.0.11" maintainer="Jeorch"
 
 RUN go get github.com/alfredyang1986/blackmirror
 

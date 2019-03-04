@@ -1,0 +1,17 @@
+version: "3"
+services:
+  bmpods_one:
+    image: jeorch/bmpods:2.0.8
+    deploy:
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8081:8081"
+    volumes:
+      - /home/jeorch/github/jeorch/go/src/github.com/alfredyang1986/BmServiceDeploy/test-config/resource:/go/bin/resource:ro
+      - /home/jeorch/github/jeorch/go/src/github.com/alfredyang1986/BmServiceDeploy/test-config/tmp:/go/bin/tmp:rw
+    networks:
+      - watchweb
+networks:
+  watchweb:
+    external: true
