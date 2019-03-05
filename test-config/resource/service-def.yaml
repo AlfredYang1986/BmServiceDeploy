@@ -318,6 +318,24 @@ functions:
   http: POST
   args:
   - name
+- name: BmGenerateSmsHandler
+  create: NewGenerateSmsHandler
+  daemons:
+  - BmSmsDaemon
+  - BmRedisDaemon
+  method: GenerateSmsCode
+  http: POST
+  args:
+  - name
+- name: BmVerifiedSmsHandler
+  create: NewVerifiedSmsHandler
+  daemons:
+  - BmSmsDaemon
+  - BmRedisDaemon
+  method: VerifiedSmsCode
+  http: POST
+  args:
+  - name
 
 middlewares:
 - name: BmCheckTokenMiddleware
@@ -345,3 +363,13 @@ daemons:
     port: 6379
     password:
     database: 0
+- name: BmSmsDaemon
+  method: NewSmsDaemon
+  args:
+    regionId: cn-hangzhou
+    accessKeyId: LTAI85ZP7htQIQuo
+    accessSecret: 7ntIcqY4KzU3fKjixqlfsfqK6in0Gw
+    domain: dysmsapi.aliyuncs.com
+    version: 2017-05-25
+    signName: 黑镜子科技儿童教育服务
+    templateCode: SMS_159490098
