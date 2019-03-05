@@ -331,6 +331,7 @@ functions:
   create: NewVerifiedSmsHandler
   daemons:
   - BmSmsDaemon
+  - BmRedisDaemon
   method: VerifiedSmsCode
   http: POST
   args:
