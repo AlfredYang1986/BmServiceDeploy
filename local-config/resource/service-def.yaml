@@ -163,12 +163,10 @@ resources:
   storages:
   - BmClassStorage
   - BmSessioninfoStorage
-  - BmReservableitemStorage
   - BmYardStorage
-  - BmStudentStorage
-  - BmDutyStorage
   friendly:
   - BmReservableitemResource
+  - BmStudentResource
   - BmDutyResource
 - name: BmUnitResource
   method: NewUnitResource
