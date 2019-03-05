@@ -318,8 +318,17 @@ functions:
   http: POST
   args:
   - name
-- name: BmSmsHandler
-  create: NewSmsHandler
+- name: BmGenerateSmsHandler
+  create: NewGenerateSmsHandler
+  daemons:
+  - BmSmsDaemon
+  - BmRedisDaemon
+  method: GenerateSmsCode
+  http: POST
+  args:
+  - name
+- name: BmVerifiedSmsHandler
+  create: NewVerifiedSmsHandler
   daemons:
   - BmSmsDaemon
   method: VerifiedSmsCode
@@ -331,6 +340,7 @@ middlewares:
 - name: BmCheckTokenMiddleware
   create: NewCheckTokenMiddleware
   daemons:
+  - BmSmsDaemon
   - BmRedisDaemon
   args:
   - name
@@ -356,10 +366,10 @@ daemons:
 - name: BmSmsDaemon
   method: NewSmsDaemon
   args:
-    regionId: 0000
-    accessKeyId: 0000
-    accessSecret: 0000
-    domain: dysmsapi.aliyun.com
-    version: 2019-03-04
-    apiName: BlackMirror-SMS
+    regionId: cn-hangzhou
+    accessKeyId: LTAI85ZP7htQIQuo
+    accessSecret: 7ntIcqY4KzU3fKjixqlfsfqK6in0Gw
+    domain: dysmsapi.aliyuncs.com
+    version: 2017-05-25
     signName: 黑镜子科技儿童教育服务
+    templateCode: SMS_159490098
