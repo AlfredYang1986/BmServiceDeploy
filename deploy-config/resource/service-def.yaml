@@ -153,6 +153,11 @@ resources:
   - BmYardStorage
   - BmImageStorage
   - BmRoomStorage
+- name: BmDutyResource
+  method: NewDutyResource
+  storages:
+  - BmDutyStorage
+  - BmTeacherStorage
 - name: BmClassResource
   method: NewClassResource
   storages:
@@ -162,9 +167,9 @@ resources:
   - BmYardStorage
   - BmStudentStorage
   - BmDutyStorage
-  - BmUnitStorage
   friendly:
   - BmReservableitemResource
+  - BmDutyResource
 - name: BmUnitResource
   method: NewUnitResource
   storages:
@@ -174,11 +179,6 @@ resources:
   - BmRoomStorage
   friendly:
   - BmClassResource
-- name: BmDutyResource
-  method: NewDutyResource
-  storages:
-  - BmDutyStorage
-  - BmTeacherStorage
 - name: BmBindReservableClassResource
   method: NewBindReservableClassResource
   storages:
@@ -198,9 +198,9 @@ models:
 - BmTeacher
 - BmRoom
 - BmYard
+- BmDuty
 - BmClass
 - BmUnit
-- BmDuty
 - BmBindReservableClass
 
 services:
@@ -246,15 +246,15 @@ services:
 - name: bm-yard
   model: BmYard
   resource: BmYardResource
+- name: bm-duty
+  model: BmDuty
+  resource: BmDutyResource
 - name: bm-class
   model: BmClass
   resource: BmClassResource
 - name: bm-unit
   model: BmUnit
   resource: BmUnitResource
-- name: bm-duty
-  model: BmDuty
-  resource: BmDutyResource
 - name: bm-bind-reservable-class
   model: BmBindReservableClass
   resource: BmBindReservableClassResource
