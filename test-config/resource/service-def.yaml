@@ -143,11 +143,13 @@ resources:
   storages:
   - BmTeacherStorage
   - BmDutyStorage
+  - BmUnitStorage
 - name: BmRoomResource
   method: NewRoomResource
   storages:
   - BmRoomStorage
   - BmYardStorage
+  - BmUnitStorage
 - name: BmYardResource
   method: NewYardResource
   storages:
