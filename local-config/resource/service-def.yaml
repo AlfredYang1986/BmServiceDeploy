@@ -166,6 +166,7 @@ resources:
   - BmSessioninfoStorage
   - BmYardStorage
   - BmDutyStorage
+  - BmUnitStorage
   - BmStudentStorage
   - BmReservableitemStorage
 - name: BmUnitResource
