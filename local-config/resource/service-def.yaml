@@ -142,6 +142,7 @@ resources:
   method: NewTeacherResource
   storages:
   - BmTeacherStorage
+  - BmDutyStorage
 - name: BmRoomResource
   method: NewRoomResource
   storages:
