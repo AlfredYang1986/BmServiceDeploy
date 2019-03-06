@@ -164,10 +164,9 @@ resources:
   - BmClassStorage
   - BmSessioninfoStorage
   - BmYardStorage
-  friendly:
-  - BmReservableitemResource
-  - BmStudentResource
-  - BmDutyResource
+  - BmDutyStorage
+  - BmStudentStorage
+  - BmReservableitemStorage
 - name: BmUnitResource
   method: NewUnitResource
   storages:
@@ -175,8 +174,6 @@ resources:
   - BmTeacherStorage
   - BmClassStorage
   - BmRoomStorage
-  friendly:
-  - BmClassResource
 - name: BmBindReservableClassResource
   method: NewBindReservableClassResource
   storages:
