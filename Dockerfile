@@ -6,9 +6,10 @@ RUN git clone https://github.com/go-yaml/yaml /go/src/gopkg.in/yaml.v2 && \
 cd /go/src/gopkg.in/yaml.v2 && git checkout tags/v2.2.2 && \
 git clone https://github.com/go-mgo/mgo /go/src/gopkg.in/mgo.v2 && \
 cd /go/src/gopkg.in/mgo.v2 && git checkout -b v2 && \
-go get -u github.com/aliyun/alibaba-cloud-sdk-go/sdk
+go get -u github.com/aliyun/alibaba-cloud-sdk-go/sdk && \
+git clone https://github.com/golang/time /go/src/golang.org/x/time
 
-LABEL BmPods.version="2.0.11" maintainer="Jeorch"
+LABEL BmPods.version="2.0.21" maintainer="Jeorch"
 
 ENV BM_HOME /go/bin
 
