@@ -79,6 +79,7 @@ resources:
   - BmSessioninfoStorage
   - BmCategoryStorage
   - BmImageStorage
+  - BmClassStorage
   - BmReservableitemStorage
 - name: BmReservableitemResource
   method: NewReservableitemResource
@@ -114,11 +115,13 @@ resources:
   storages:
   - BmKidStorage
   - BmApplyStorage
+  - BmStudentStorage
 - name: BmApplicantResource
   method: NewApplicantResource
   storages:
   - BmApplicantStorage
   - BmApplyStorage
+  - BmKidStorage
 - name: BmBrandResource
   method: NewBrandResource
   storages:
@@ -144,6 +147,7 @@ resources:
   - BmTeacherStorage
   - BmDutyStorage
   - BmUnitStorage
+  - BmStudentStorage
 - name: BmRoomResource
   method: NewRoomResource
   storages:
@@ -156,11 +160,13 @@ resources:
   - BmYardStorage
   - BmImageStorage
   - BmRoomStorage
+  - BmClassStorage
 - name: BmDutyResource
   method: NewDutyResource
   storages:
   - BmDutyStorage
   - BmTeacherStorage
+  - BmClassStorage
 - name: BmClassResource
   method: NewClassResource
   storages:
