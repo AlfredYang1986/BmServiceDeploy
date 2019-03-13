@@ -86,6 +86,8 @@ resources:
   storages:
   - BmReservableitemStorage
   - BmSessioninfoStorage
+  - BmCategoryStorage
+  - BmImageStorage
   - BmClassStorage
 - name: BmImageResource
   method: NewImageResource
@@ -312,6 +314,14 @@ functions:
   - BmMongodbDaemon
   - BmRedisDaemon
   method: ApplicantValidation
+  http: POST
+  args:
+  - name
+- name: BmApplicantUpdateHandler
+  create: NewApplicantUpdateHandler
+  daemons:
+  - BmMongodbDaemon
+  method: UpdateApplicant
   http: POST
   args:
   - name
