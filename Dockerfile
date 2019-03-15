@@ -9,7 +9,7 @@ cd /go/src/gopkg.in/mgo.v2 && git checkout -b v2 && \
 go get -u github.com/aliyun/alibaba-cloud-sdk-go/sdk && \
 git clone https://github.com/golang/time /go/src/golang.org/x/time
 
-LABEL BmPods.version="2.0.27" maintainer="Jeorch"
+LABEL BmPods.version="2.0.28" maintainer="Jeorch"
 
 ENV BM_HOME /go/bin
 
