@@ -67,8 +67,12 @@ storages:
   method: NewDutyStorage
   daemons:
   - BmMongodbDaemon
-- name: BmBindReservableClassStorage
-  method: NewBindReservableClassStorage
+- name: BmTransactionStorage
+  method: NewTransactionStorage
+  daemons:
+  - BmMongodbDaemon
+- name: BmAttachableStorage
+  method: NewAttachableStorage
   daemons:
   - BmMongodbDaemon
 
@@ -187,10 +191,20 @@ resources:
   - BmTeacherStorage
   - BmClassStorage
   - BmRoomStorage
-- name: BmBindReservableClassResource
-  method: NewBindReservableClassResource
+- name: BmTransactionResource
+  method: NewTransactionResource
   storages:
-  - BmBindReservableClassStorage
+  - BmTransactionStorage
+  - BmAttachableStorage
+  - BmApplicantStorage
+  - BmTeacherStorage
+  - BmStudentStorage
+- name: BmAttachableResource
+  method: NewAttachableResource
+  storages:
+  - BmTransactionStorage
+  - BmAttachableStorage
+  - BmStudentStorage
 
 models:
 - BmKid
@@ -209,7 +223,8 @@ models:
 - BmDuty
 - BmClass
 - BmUnit
-- BmBindReservableClass
+- BmAttachable
+- BmTransaction
 
 services:
 - name: bm-kid
@@ -263,9 +278,12 @@ services:
 - name: bm-unit
   model: BmUnit
   resource: BmUnitResource
-- name: bm-bind-reservable-class
-  model: BmBindReservableClass
-  resource: BmBindReservableClassResource
+- name: bm-transaction
+  model: BmTransaction
+  resource: BmTransactionResource
+- name: bm-attachable
+  model: BmAttachable
+  resource: BmAttachableResource
 
 functions:
 - name: BmProvinceHandler
