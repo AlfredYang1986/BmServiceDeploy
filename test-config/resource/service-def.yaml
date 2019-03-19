@@ -370,6 +370,14 @@ functions:
   http: POST
   args:
   - name
+- name: BmPotentialStudentHandler
+  create: NewPotentialStudentHandler
+  daemons:
+  - BmMongodbDaemon
+  method: AddPotentialStudent
+  http: POST
+  args:
+  - name
 
 middlewares:
 - name: BmCheckTokenMiddleware
